@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Philipp Reinhardt's personal website. A selection of public projects in code, places, and tools.">
+  <meta name="theme-color" content="#fafbf8">
+  <title>Philipp Reinhardt</title>
+  <style>
+    :root { color-scheme: light; --paper: #fafbf8; --ink: #192a25; --muted: #59675f; --line: #d6ded6; --accent: #285a42; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 1rem; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .25em; }
+    a:hover { color: var(--accent); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 1px; }
+    ::selection { background: #dce9d4; }
+    .page { width: min(100% - 3rem, 64rem); margin-inline: auto; }
+    .skip { position: absolute; top: -5rem; left: 1rem; padding: .5rem 1rem; background: var(--ink); color: white; z-index: 1; }
+    .skip:focus { top: 1rem; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 2rem; padding-block: 2rem; border-bottom: 1px solid var(--line); }
+    .wordmark { font-family: Georgia, "Times New Roman", serif; font-size: 1.4rem; text-decoration: none; }
+    nav { display: flex; gap: 1.75rem; font-size: .9375rem; }
+    nav a { text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .intro { padding: 6.5rem 0 5.5rem; max-width: 48rem; }
+    .eyebrow { margin: 0 0 1.5rem; color: var(--accent); font-size: .875rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.5rem, 8vw, 6.25rem); font-weight: 400; line-height: 1.03; letter-spacing: -.055em; margin: 0 0 2rem; }
+    .intro p:last-child { max-width: 34rem; margin: 0; color: var(--muted); font-size: 1.25rem; line-height: 1.6; }
+    .work { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; padding-block: 2.5rem 4.5rem; border-top: 1px solid var(--line); scroll-margin-top: 2rem; }
+    h2 { margin: 0 0 .5rem; font-size: 1rem; font-weight: 600; }
+    .section-note { margin: 0; color: var(--muted); font-size: .9375rem; }
+    .projects { list-style: none; margin: 0; padding: 0; }
+    .projects li { padding: 1.65rem 0; border-bottom: 1px solid var(--line); }
+    .projects li:first-child { padding-top: 0; }
+    .project-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1rem; }
+    h3 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.65rem; font-weight: 400; line-height: 1.3; letter-spacing: -.02em; }
+    h3 a { text-decoration: none; }
+    h3 a:hover { text-decoration: underline; }
+    .kind { color: var(--muted); font-size: .875rem; }
+    .projects p { margin: .6rem 0 0; max-width: 33rem; color: var(--muted); }
+    .more { display: inline-block; margin-top: 1.75rem; font-size: .9375rem; }
+    footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-block: 1.5rem 2.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .875rem; }
+    footer p { margin: 0; }
+    @media (max-width: 600px) {
+      .page { width: min(100% - 2.5rem, 64rem); }
+      header { padding-block: 1.5rem; gap: 1rem; }
+      nav { gap: 1.25rem; }
+      .intro { padding-block: 4rem 3.5rem; }
+      .intro p:last-child { font-size: 1.125rem; }
+      .work { grid-template-columns: 1fr; gap: 2rem; padding-block: 2rem 3rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="page">
+    <header>
+      <a class="wordmark" href="./" aria-label="Philipp Reinhardt, home">PR.</a>
+      <nav aria-label="Main navigation">
+        <a href="#work">Projects</a>
+        <a href="https://github.com/phcode-py">GitHub</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="intro" aria-labelledby="name">
+        <p class="eyebrow">Personal website</p>
+        <h1 id="name">Philipp<br>Reinhardt</h1>
+        <p>A few things I've made, from exploring places in Zurich to building tools with Python.</p>
+      </section>
+      <section class="work" id="work" aria-labelledby="projects-title">
+        <div>
+          <h2 id="projects-title">Selected projects</h2>
+          <p class="section-note">A selection from my GitHub.</p>
+        </div>
+        <div>
+          <ul class="projects">
+            <li>
+              <div class="project-heading">
+                <h3><a href="https://github.com/phcode-py/lichtraum">Lichtraum</a></h3>
+                <span class="kind">Places &amp; architecture</span>
+              </div>
+              <p>A website for tracking walks and light spaces in the city of Zurich.</p>
+            </li>
+            <li>
+              <div class="project-heading">
+                <h3><a href="https://github.com/phcode-py/jpg2svg-tracer">JPG to SVG tracer</a></h3>
+                <span class="kind">Python tool</span>
+              </div>
+              <p>A Python tool for converting JPG line drawings and icons into SVG vector drawings.</p>
+            </li>
+          </ul>
+          <a class="more" href="https://github.com/phcode-py?tab=repositories">All public repositories</a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Philipp Reinhardt</p>
+      <a href="https://github.com/phcode-py">Find me on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
