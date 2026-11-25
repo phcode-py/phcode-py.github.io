@@ -66,7 +66,7 @@ to that workflow; no hosting-setting changes or custom deployment actions are
 needed. The `.nojekyll` file must stay removed so Markdown and layouts compile.
 `CNAME` preserves `preinhardt.com`.
 
-Changes are reviewed through `staging` before promotion to `main`.
+Changes for this personal website are made directly on `main`.
 
 ## Math assets
 
