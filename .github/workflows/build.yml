@@ -1,0 +1,26 @@
+name: Build site
+
+on:
+  push:
+    branches: [main, staging]
+  pull_request:
+    branches: [staging]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      - name: Build production site
+        run: bundle exec jekyll build --strict_front_matter
+      - name: Check drafts stay private
+        run: test -z "$(find _site -path '*/example/index.html' -print -quit)"
+      - name: Build draft example
+        run: bundle exec jekyll build --drafts --strict_front_matter --destination _preview

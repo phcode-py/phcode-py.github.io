@@ -1,30 +1,29 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Philipp Reinhardt's personal website">
-  <title>Philipp Reinhardt</title>
-</head>
-<body>
-  <a href="#main">Skip to content</a>
-  <div>
-    <header>
-      <a href="./" aria-label="Philipp Reinhardt, home">PR.</a>
-      <nav aria-label="Main navigation">
-        <a href="#work">Projects</a>
-      </nav>
-    </header>
-    <main id="main">
-      <section aria-labelledby="name">
-        <p>Personal website</p>
-        <h1 id="name">Philipp Reinhardt</h1>
-        <p>this is going to become my personal website</p>
-      </section>
-    </main>
-    <footer>
-      <p>Philipp Reinhardt</p>
-    </footer>
+---
+layout: default
+---
+<section class="intro" aria-labelledby="name">
+  <p class="eyebrow">Personal website</p>
+  <h1 id="name">Philipp Reinhardt<span class="accent">.</span></h1>
+</section>
+<section class="home-section" id="about" aria-labelledby="about-title">
+  <h2 id="about-title">About</h2>
+  <div class="section-content prose">{% capture about %}{% include about.md %}{% endcapture %}{{ about | markdownify }}</div>
+</section>
+<section class="home-section" id="blog" aria-labelledby="blog-title">
+  <h2 id="blog-title">Blog</h2>
+  <div class="section-content">
+    {% if site.posts.size > 0 %}
+    <ol class="post-list">
+      {% for post in site.posts %}
+      <li>
+        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%d %b %Y' }}</time>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+        {% if post.description %}<p>{{ post.description | escape }}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+    {% else %}
+    <p class="muted">No posts yet.</p>
+    {% endif %}
   </div>
-</body>
-</html>
+</section>

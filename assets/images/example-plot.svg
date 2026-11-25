@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Quadratic curve</title><desc id="desc">A curve rises from the lower left to the upper right, on axes labelled x and y.</desc>
+  <rect width="640" height="360" rx="8" fill="#f0f2ee"/>
+  <path d="M70 35V300H590" fill="none" stroke="#626b66" stroke-width="2"/>
+  <path d="M70 300Q330 300 570 55" fill="none" stroke="#28644b" stroke-width="4"/>
+  <g fill="#202a26" font-family="Georgia,serif" font-size="22"><text x="588" y="330">x</text><text x="40" y="40">y</text><text x="46" y="327">0</text></g>
+</svg>

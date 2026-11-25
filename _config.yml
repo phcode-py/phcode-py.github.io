@@ -1,0 +1,23 @@
+title: Philipp Reinhardt
+description: Philipp Reinhardt’s personal website.
+url: https://preinhardt.com
+baseurl: ""
+permalink: /blog/:title/
+timezone: Europe/Zurich
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      math: false
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
