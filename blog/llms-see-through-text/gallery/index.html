@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recognising images from source text</title>
+  <meta name="description" content="Seven correctly answered source-only questions: inspect the complete text beside the rendered image.">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="masthead"><a class="brand" href="#top">Blind Render Bench <span>/ Examples</span></a><a href="/blog/llms-see-through-text/">Setup and results</a></header>
+  <div class="layout" id="top">
+    <aside><div class="nav-label">SOURCE-ONLY SUCCESSES</div><nav id="navigation" aria-label="Examples"></nav><div class="run-note">gpt-6.1-sol<br>Medium reasoning<br>No image input</div></aside>
+    <main>
+      <section class="intro"><p class="eyebrow">TEXT INPUT · CORRECT VISUAL ANSWERS</p><h1>What the model read.<br>What the file renders.</h1><p>Seven selected questions answered correctly from source text alone. The complete source is on the left; its render is on the right.</p><p class="scope">The model received the question and answer options. It could read the source, but could not run a renderer or decoder. Correct answers do not establish an internal visual image.</p></section>
+      <div class="controls"><span>Source text</span><label for="font-size">Font <output id="font-value" for="font-size">11 px</output></label><input id="font-size" type="range" min="9" max="16" value="11" aria-label="Source font size"><label class="wrap-label"><input type="checkbox" id="wrap" checked> Wrap lines</label><span class="scroll-note">Scroll inside each text panel to read the full source.</span></div>
+      <div id="examples" aria-live="polite"><p class="loading">Loading complete inputs…</p></div>
+      <footer>Answers are checked against fixed benchmark keys. These are selected successes from a dataset of 200 questions. Source lengths are characters, not tokens. Asset credits and all answer options are included with each example.</footer>
+    </main>
+  </div>
+</body>
+</html>

@@ -3,10 +3,11 @@ layout: default
 ---
 <article class="post">
   <header class="post-header">
-    <p class="eyebrow">Blog <span aria-hidden="true">/</span> <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%d %b %Y' }}</time></p>
+    <p class="eyebrow"><a href="{{ "/" | relative_url }}">Philipp Reinhardt</a> <span aria-hidden="true">/</span> Blog <span aria-hidden="true">/</span> <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%d %b %Y' }}</time></p>
     <h1>{{ page.title | escape }}</h1>
     {% if page.description %}<p class="post-description">{{ page.description | escape }}</p>{% endif %}
   </header>
+  {% if page.hero %}{% include {{ page.hero }} %}{% endif %}
   <div class="prose">{{ content }}</div>
   <nav class="post-footer" aria-label="Blog navigation"><a href="{{ '/#blog' | relative_url }}">All posts</a></nav>
 </article>
