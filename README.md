@@ -2,7 +2,7 @@
 
 A small GitHub Pages site. Jekyll builds the Markdown into static HTML; the home
 page has no JavaScript or external font requests. Posts load self-hosted KaTeX
-only when `math: true` is set. Light and dark modes follow the reader’s system.
+only when `math: true` is set. A plain white background, serif headings, and blue links keep the layout simple.
 
 ## Edit the About section
 
